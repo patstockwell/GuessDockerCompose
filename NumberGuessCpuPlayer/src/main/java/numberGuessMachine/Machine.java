@@ -32,7 +32,7 @@ public class Machine {
 	public void guess() {
 		int guess = findNumber(this.low, this.high);
 		System.out.println("Guess: " + guess);
-		String guessUrl = "http://localhost:8080/guess"
+		String guessUrl = "http://guess:8080/guess"
 				+ "?guessedNum=" + guess
 				+ "&gameCount=" + this.gameCount
 				+ "&userID=" + this.id;
@@ -53,7 +53,7 @@ public class Machine {
 	}
 
 	public void setGameCount() {
-		JsonNode response = get("http://localhost:8080/game/count");
+		JsonNode response = get("http://guess:8080/game/count");
 		JsonNode gameCount = response.path("message");
 		System.out.println("Current game count is: " + gameCount.asText());
 		this.gameCount = gameCount.asInt();
@@ -84,7 +84,7 @@ public class Machine {
 		while (gameNotReady) {
 			try {
 				System.out.println("Attempting connection to NumberGuess program.");
-				this.get("http://localhost:8080/game/count");
+				this.get("http://guess:8080/game/count");
 				gameNotReady = false;
 			}
 			catch (Exception e){

@@ -13,7 +13,7 @@ public class NumberGuessMachine {
 		theMachine.checkForGame();
 		
 		String registerUrl = "http://guess:8080/player/register?name=TheMachine&password=1234";
-		String loginUrl = "http://guess:8080/player/login?name=TheMachine&password=1234";
+		String loginUrl = "http://guess:8080/player/login?name=TheMachine&password=1234";	
 
 		theMachine.get(registerUrl);
 		JsonNode login = theMachine.get(loginUrl);
