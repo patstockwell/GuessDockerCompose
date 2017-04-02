@@ -1,0 +1,26 @@
+version: '3'
+services:
+  guess:
+    depends_on:
+      - "mysql"
+    build: ./NumberGuess
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/numberGuessDB?useSSL=false
+      SPRING_DATASOURCE_USERNAME: springuser
+      SPRING_DATASOURCE_PASSWORD: numberguesspassword
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_PASSWORD: numberguesspassword
+      MYSQL_USER: springuser
+      MYSQL_DATABASE: numberGuessDB
+    expose:
+        - "3306"
+  cpu:
+    depends_on:
+      - "mysql"
+    build: ./NumberGuessCpuPlayer
+    
