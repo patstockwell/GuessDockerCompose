@@ -48,16 +48,6 @@ public class GuessController {
 			Arena.OFDOOM.createNewGame();
 			message = "Winner! " + guessedNum + " is the secret Number";
 			changeInPoints = guess;
-			try {
-				SlackApi api = new SlackApi("https://hooks.slack.com/services/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");
-				api.call(new SlackMessage("\nUser: " + currentPlayer.getName() 
-				+ "\n " + message 
-				+ "\nChange in points: " + changeInPoints 
-				+ "\nUpdated Points: " + (currentPoints + changeInPoints) + "\n"));
-			} 
-			catch (Exception e){
-				System.out.println("No Slack connection available.");
-			}
 		}
 		currentPoints = currentPoints + changeInPoints;
 		currentPlayer.setPoints(currentPoints);
