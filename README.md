@@ -7,22 +7,16 @@ A project made up of a java number guessing game application, and cpu player, an
 The NumberGuess app and the NumberGuessCpuPlayer both need to be compiled.
 It can be built using the build tool maven. 
 Uses Docker and Docker-Compose to run.
+Navigate to `/` (project root)
 
-### App
-From `/NumberGuess` build using the command
-```shell
-mvn clean package
-```
-
-### CPU Player
-
-From `/NumberGuessCpuPlayer` build using the command
+### Build
+Build using the command
 ```shell
 mvn clean package
 ```
 
 ### Launch
-From `/` Run using the command
+Run using the command
 ```shell
 docker-compose up
 ```

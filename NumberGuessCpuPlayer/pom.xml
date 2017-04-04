@@ -5,10 +5,11 @@
 	<artifactId>NumberGuessCpuPlayer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>NumberGuessMachine</name>
+	
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<groupId>com.littlepay</groupId>
+		<artifactId>NumberGuessProject</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>
